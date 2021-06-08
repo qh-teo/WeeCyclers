@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Bookings</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary" [routerLink]="['/add-booking']">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="display">
+
+  <h3 id="title">View your Bookings at a glance!</h3>
+  <!-- <p class="label">Pull to refresh to see updates.</p> -->
+
+  <div id="container" *ngIf="products.length===0"> 
+    <strong>You have no Bookings!</strong>
+  </div>
+    
+  <ion-list>
+    <ion-item *ngFor="let item of products">
+      <ion-label [routerLink]="['/edit-booking',item.collectionid]"> <!--[routerLink]="['/edit-product',item.prodId]"-->
+        <h2>Collection on: {{item.collectiondate.substring(0,10)}} {{item.collectiondate.substring(11,16)}}</h2>          
+        <p>Address: {{item.collectionaddress}} Singapore {{item.collectionpostal}}</p> 
+        <p>Status: Pending</p>
+      </ion-label>
+
+      <ion-icon slot="end" name="trash-bin" id={{item.collectionid}}
+        (click)="presentAlert(item.collectionid)"> 
+        <!-- delete(item.collectionid) presentAlert -->
+      </ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <ion-button [routerLink]="['/viewhistory']">View Completed History</ion-button>
+</ion-content>
+
+

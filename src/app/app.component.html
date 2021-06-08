@@ -1,0 +1,47 @@
+<ion-app>
+  <ion-split-pane contentId="menuContent">
+    <ion-menu contentId="menuContent" type="overlay">
+      <ion-header>
+        <ion-toolbar>          
+          <ion-item lines="none">
+            <ion-avatar slot="start" class="avatar">
+              <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+            </ion-avatar>
+            <ion-text class="custom"><h2>Someone</h2></ion-text>
+          </ion-item>                   
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content>
+        <ion-list>
+          <ion-menu-toggle auto-hide="false">
+            <ion-item [routerLink]="['/payment-details', 2]" lines="none">
+              <ion-icon slot="start" name="logo-paypal"></ion-icon>
+              <ion-label>Payment</ion-label>
+            </ion-item>
+            <ion-item [routerLink]="['/']" lines="none">
+              <ion-icon slot="start" name="cog-outline"></ion-icon>            
+              <ion-label>Settings</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+
+        <!-- Remove it temporailiy is no required in the project -->
+        <!-- <ion-list id="labels-list">
+              <ion-list-header>Labels</ion-list-header>
+    
+              <ion-item *ngFor="let label of labels" lines="none">
+                <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
+                <ion-label>{{ label }}</ion-label>
+              </ion-item>
+            </ion-list> -->
+
+      </ion-content>   
+    </ion-menu>
+    <ion-router-outlet id="menuContent" main></ion-router-outlet>
+  </ion-split-pane>
+
+
+
+
+</ion-app>

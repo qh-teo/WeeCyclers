@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Ionic App</title>
+
+  <base href="/" />
+  <link rel="stylesheet" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="assets/rajDesign/mainstyle.css" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.0/mapsjs-ui.css?dp-version=1533195059" />
+  <meta name="viewport" content="initial-scale=1.0,width=device-width"/>
+  <!-- replace url with paypal gateway id -->
+  <script src="<PAYPAL_URL>"> // Required. Replace SB_CLIENT_ID with your sandbox client ID.
+  </script>
+</head>
+
+<body style="background-color: #66a9e3;">
+  <app-root></app-root>
+
+  <script src="https://unpkg.com/@popperjs/core@2.4.0/dist/umd/popper.min.js"></script>
+  <script src="assets/js/bootstrap.js"></script>
+  <script src="https://js.api.here.com/v3/3.0/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://js.api.here.com/v3/3.0/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://js.api.here.com/v3/3.0/mapsjs-mapevents.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://js.api.here.com/v3/3.0/mapsjs-places.js" type="text/javascript" charset="utf-8"></script>
+  <script src="https://js.api.here.com/v3/3.0/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
+  
+  <script>
+  function collectorAcc(){
+    document.getElementById("loginLogo").src = "/assets/rajDesign/images/SmallerCollector.png";
+    document.getElementById("collectorW").style.backgroundColor = "#1761a0";
+    document.getElementById("weeCyclerW").style.backgroundColor = "white";
+
+  }
+  function weeCyclerAcc(){
+    document.getElementById("loginLogo").src = "/assets/rajDesign/images/SmallerLogo.png";
+    document.getElementById("collectorW").style.backgroundColor = "white";
+    document.getElementById("weeCyclerW").style.backgroundColor = "#1761a0";
+
+  }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<ion-card class="cardDesign" color="light">
+  <ion-card-header>
+    <div class="container ">
+      <div class="row">
+        <div class="text-center">
+          <img id="loginLogo" src="/assets/rajDesign/images/SmallerLogo.png" />
+        </div>
+      </div>
+    </div>
+  </ion-card-header>
+
+  <div class="container">
+    <div class="row">
+        <ion-label style="color: black; font-family: Helvetica, sans-serif; margin-left: 1em;font-size: 18px">Select Your Account</ion-label>
+    </div>
+    <div class="row">
+      
+      <div class="text-center">
+        <ion-card button="true" class="collector" (click)="accCollector()" id="collectorW" onclick="javascript:collectorAcc();" style="">
+          <img  src="/assets/rajDesign/images/delivery-man (1).png" />
+        </ion-card>
+      </div>  
+
+      <div class="text-center">
+        <ion-card button="true" class="weeycler" (click)="accWeeCycler()" id="weeCyclerW" onclick="javascript:weeCyclerAcc();" style="">
+          <img  src="/assets/rajDesign/images/employee.png" />
+        </ion-card>
+      </div>     
+    </div>
+
+    <div class="row text-center">
+      <div class="col-5 mx-auto">
+        <ion-chip color="primary">
+          <ion-input color="dark" style="font-family: Helvetica, sans-serif; font-size: 18px" [(ngModel)]="accType" value="accType" readonly></ion-input>
+        </ion-chip>
+      </div>
+    </div>
+  </div>
+
+  <ion-card-content>
+    <form [formGroup]="loginForm">
+      <ion-card style="margin-bottom: 1em">
+        <ion-item>
+          <ion-label>Username</ion-label>
+          <ion-input formControlName="username" placeholder="Enter Username" style="text-align: right"></ion-input>
+          
+        </ion-item>
+      
+        <ion-item >
+          <ion-label>Password</ion-label>
+          <ion-input type="password" formControlName="password" placeholder="Enter Password" style="text-align: right;"></ion-input>
+        </ion-item>
+      </ion-card>
+
+      <ion-button expand="block" color="light" (click)=loginRaj()>Login</ion-button>
+      <ion-button expand="block" color="light" routerLink="/signup">Sign up</ion-button>
+      
+    </form>
+  </ion-card-content>
+</ion-card>
+
+<script src="assets/js/login.js"></script>

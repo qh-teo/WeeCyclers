@@ -1,0 +1,38 @@
+<ion-card class="cardDesign" color="light">
+  <ion-card-header color="light">
+  <div class="container ">
+      <div class="row">
+        <div class="text-center">
+        <ion-toolbar>
+          <ion-title>Clearing Bin</ion-title>
+        </ion-toolbar>
+        </div>
+      </div>
+  </div>
+  </ion-card-header>
+
+  <ion-card-content color="light">
+      <ion-item>
+        <ion-label style="color: black; font-family: Helvetica, sans-serif;font-size: 14px">Location</ion-label>
+        <ion-chip color="primary" slot="end">Nanyang Polytechnic Block L</ion-chip>
+
+      </ion-item>
+
+      <ion-item>
+        <ion-label style="color: black; font-family: Helvetica, sans-serif;font-size: 14px">Points</ion-label>
+        <ion-chip color="success" slot="end">+200</ion-chip>
+
+      </ion-item>
+
+      <ion-item>
+        <ion-label style="color: black; font-family: Helvetica, sans-serif;font-size: 14px">Date</ion-label>
+        <ion-chip color="medium" slot="end">23/02/2021</ion-chip>
+
+      </ion-item>
+
+    <ion-button expand="full" (click)="clearBin()" color="secondary">
+      <ion-icon name="back"></ion-icon>
+      Confirm
+    </ion-button>
+  </ion-card-content>
+</ion-card>

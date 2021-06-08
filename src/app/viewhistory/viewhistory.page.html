@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>View Completed History</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of booking">
+      <ion-label>
+        <h2>Collection on: {{item.collectiondate.substring(0,10)}} {{item.collectiondate.substring(11,16)}}</h2>          
+        <p>Address: {{item.collectionaddress}} Singapore {{item.collectionpostal}}</p> 
+        <p>Status: Completed</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Payment Details</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="paySubForm">
+    <ion-list *ngFor="let item of result">
+
+      <ion-item>
+        <ion-label slot="start">
+          <h4>Username</h4>
+        </ion-label>
+        <ion-input style="text-align: right;" formControlName="uName" value="{{ item.profilename }}"
+          ngModel="{{ item.profilename }}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label slot="start">
+          <h3>Email</h3>
+        </ion-label>
+        <ion-input style="text-align: right;" formControlName="uEmail" value="{{ item.profileemail }}"
+          ngModel="{{ item.profileemail }}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label slot="start">
+          <h3>Address</h3>
+        </ion-label>
+        <ion-input style="text-align: right;" formControlName="uAddress" value="{{ item.profileaddress }} "
+          ngModel="{{ item.profileaddress }}"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label slot="start">
+          <h3>Member Type</h3>
+        </ion-label>
+        <ion-input style="text-align: right;" formControlName="uMemberRole" value="{{ item.profilerole}}"
+          ngModel="{{ item.profilerole }}" readonly></ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon name="cube-outline" slot=start></ion-icon>
+        <ion-label slot="end" class="product-details">
+          <h3>Product</h3>
+          <ion-input slot=end readonly formControlName="pName">
+          </ion-input>
+        </ion-label>
+      </ion-item>
+
+      <!-- Show product template necessary -->
+      <div *ngIf="item.profilerole === 'Non-Member'">
+        <ion-item lines="none">
+          <ion-icon name="time-outline" slot=start></ion-icon>
+          <ion-label slot="end" class="product-details">
+            <h3>Billing Cycle</h3>
+            <ion-input slot=end readonly formControlName="pCycle">
+            </ion-input>
+          </ion-label>
+        </ion-item>
+
+        <ion-item lines="none">
+          <ion-icon name="pricetag-outline" slot=start></ion-icon>
+          <ion-label slot="end" class="product-details">
+            <h3>Price</h3>
+            <ion-input type="text" slot=end readonly formControlName="pPrice">
+            </ion-input>
+          </ion-label>
+        </ion-item>
+      </div>
+    
+      <ion-toolbar>
+        <!-- Navigate to payment gateway -->
+        <div *ngIf="item.profilerole === 'Non-Member'; else UnSub">
+          <!-- Subscribe block -->
+          <ion-button class="exe-button" expand="block" (click)="makePaypalOrder()">
+            Subscribe
+          </ion-button>
+          <div id="paypal-button-container"></div>          
+        </div>        
+        <ng-template #UnSub>
+          <!-- Unsubscribe block -->
+          <ion-button class="exe-button" expand="block" (click)="unsubPaypal()">
+            Unsubscribe
+          </ion-button>      
+        </ng-template>    
+      </ion-toolbar>
+    
+    </ion-list>
+
+  </form>
+</ion-content>

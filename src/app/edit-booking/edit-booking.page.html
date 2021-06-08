@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Edit Booking</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- Fill in appropriate APP ID and APP CODE for HereMaps -->
+  <app-userlocation appId="<HEREMAPS_APP_ID>" appCode="<HEREMAPS_APP_CODE>" lat="1.3521" lng="103.8198"></app-userlocation>
+
+  <!-- <ion-label color="medium">{{bookingId}}</ion-label> -->
+  <form [formGroup]="editBookingForm">  
+    <ion-list *ngFor = "let item of result">
+    <!-- Address Input -->
+      <ion-item>
+        <ion-label>Address: </ion-label>
+       <ion-input formControlName="address" [(ngModel)]="item.collectionaddress"  placeholder="Enter Address" style="text-align: right"></ion-input>
+      </ion-item>
+
+    <!-- Postal Code Input -->
+    <ion-item>
+      <ion-label>Postal Code: </ion-label>
+      <ion-input formControlName="postalCode" [(ngModel)]="item.collectionpostal"  placeholder="Enter Postal Code" style="text-align: right"></ion-input>
+    </ion-item>
+
+    <!-- Email Input -->
+    <ion-item>
+      <ion-label>Email: </ion-label>
+      <ion-input formControlName="email"  [(ngModel)]="item.email" placeholder="Enter Email" style="text-align: right"></ion-input>
+    </ion-item>
+
+    <!-- Date Input -->
+    <ion-item>
+      <ion-label>Date: </ion-label>
+      <ion-datetime formControlName="bookingDate" [(ngModel)]="item.collectiondate" displayFormat="DD MMM YYYY" pickerFormat="DD MMM YYYY"  placeholder="Enter Date" [min]="minDate" [max]="maxDate"></ion-datetime>
+    </ion-item>
+
+
+    <!-- Time Input -->
+    <ion-item>
+      <ion-label>Time: </ion-label>
+      <ion-datetime formControlName="bookingTime" [hourValues]="hourValues" [minuteValues]="minuteValues" [min]="minTime" [max]="maxTime" displayFormat="hh:mm A" pickerFormat="HH:mm A" placeholder="Enter Time"></ion-datetime>
+    </ion-item>
+
+    <!-- Update Button -->
+    <ion-button expand="block" color="secondary" (click)=update()>Update Booking!</ion-button>
+  </ion-list>
+  </form>
+
+<!-- checking data, to comment off after completion -->
+  <!-- <ion-label color="medium">
+    {{editBookingForm.value.address}}
+    {{editBookingForm.value.postalCode}}
+    {{editBookingForm.value.bookingDate}}
+    {{editBookingForm.value.bookingTime}}
+  </ion-label> -->
+
+  <ion-item 
+    *ngIf="editBookingForm.controls.address.errors && submitted">
+    <ion-label color="danger">
+      Name is required.
+    </ion-label>
+  </ion-item>
+  
+  <ion-item
+        *ngIf="editBookingForm.controls.postalCode.errors && submitted">
+        <ion-label color="danger">
+          Postal Code is invalid.
+        </ion-label>
+  </ion-item>
+
+  <ion-item
+    *ngIf="editBookingForm.controls.email.errors && submitted">
+    <ion-label color="danger">
+      Email is required.
+    </ion-label>
+</ion-item>
+
+  <ion-item
+        *ngIf="editBookingForm.controls.bookingDate.errors && submitted">
+        <ion-label color="danger">
+          Date is empty.
+        </ion-label>
+  </ion-item>
+
+  <ion-item
+        *ngIf="editBookingForm.controls.bookingTime.errors && submitted">
+        <ion-label color="danger">
+          Time is empty.
+        </ion-label>
+  </ion-item>
+
+</ion-content>

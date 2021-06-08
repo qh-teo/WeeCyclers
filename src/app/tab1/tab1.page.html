@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar [color]="currentColor">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <img src="/assets/rajDesign/images/smallerWLogo.png" />
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card>
+    <ion-select [(ngModel)]="finish" placeholder="Smart Bin Locations">
+      <ion-select-option *ngFor="let item of smartBins" [value]="item.sLatsLng">{{item.sName}}</ion-select-option>
+    </ion-select>
+  </ion-card>
+
+
+  <here-map appId="<App_id>" appCode="<App_Code>" lat="1.3521" lng="103.8198" [finish]="finish"></here-map>
+  <ion-button expand="full" (click)="scanCode()" style="--background: #1761a0">
+    <ion-icon name="qr-scanner"></ion-icon>
+    Scan QR Code
+  </ion-button>
+
+</ion-content>
+

@@ -1,0 +1,8 @@
+{
+  "name": "WeeCycle",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,28 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="primary">
+        <ion-icon slot="icon-only" name="arrow-back" [routerLink]="['/login']"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/tabs/tab3">Log in</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="header">
+    <h1>Sign Up</h1>
+  <p>It's quick and easy.</p>
+  </div>
+  
+  <form [formGroup]="signupForm">
+    <ion-input placeholder="Enter your email here" formControlName="username"></ion-input>
+    <ion-input type="password" placeholder="Enter your password here"  formControlName="password"></ion-input>
+    <ion-button expand="block" shape="round" (click)=signup()>Register</ion-button>
+</form>
+<div id="header">
+  <p>By pressing 'Register' you agree to <br />our terms & conditions.</p>
+</div>
+</ion-content>

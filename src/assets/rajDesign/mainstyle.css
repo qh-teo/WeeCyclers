@@ -1,0 +1,47 @@
+.loginHeader{
+    font-style: Helvetica;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 10;
+}
+
+.cardDesign{
+    color: green; 
+    margin-top: 2em;
+}
+
+.containerF {
+    display: flex; /* or inline-flex */
+  }
+
+button{
+    user-select:#1761a0;
+}
+
+.collector:active {
+    background-color: #1761a0;
+}
+.card-native:focus {
+    background-color: #1761a0;
+}
+
+.weeycler:active {
+    background-color: #1761a0;
+}
+
+.alert-head{
+    background-color: #66a9e3;
+}
+
+ion-content {
+    --background: var(--ion-background-color, transparent);
+    }
+
+    /** Style for the info bubble content */
+.H_ib_body {
+    background: #1761a0 !important;
+  }
+  /** Style for the info bubble tail */
+.H_ib.H_ib_top .H_ib_tail::after {
+    border-color: #1761a0 !important;
+}

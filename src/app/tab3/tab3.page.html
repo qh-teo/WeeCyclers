@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Tab 3
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item>
+      <ion-list>
+        <ion-item *ngFor="let profile of profiledetails">
+          <ion-label>
+            <h2>Name: {{profile.profilename}}</h2>          
+            <p>Address: {{profile.profileaddress}}</p> 
+            <p>Role: {{profile.profilerole}}</p>
+            <p>Profile Email: {{profile.profileemail}}</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+
+      <ion-label>
+        <h2>Name: </h2>
+        <h2>Profile Address: </h2>  
+        <h2>Profile Role: </h2>       
+        <p>Profile Email: </p>       
+      </ion-label>
+    </ion-item>
+ </ion-list>
+</ion-content>
